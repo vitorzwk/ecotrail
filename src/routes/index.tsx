@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
 function Dashboard() {
   const p = useProgress();
   const level = levelFromXp(p.xp);
-  const next = trails.find((t) => t.available && !p.lessons[t.id]) ?? trails[0];
+  const next = trails.find((t) => t.available && !p.lessons[t.id]) ?? trails[0]!;
   const kg = p.disposals.reduce((s, d) => s + (wastes.find((w) => w.id === d.wasteId)?.estimatedKg ?? 0), 0);
   const earned = badges.filter((b) => p.badges.includes(b.id));
   const mood = p.streak >= 4 ? "motivado" : "feliz";

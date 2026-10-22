@@ -38,7 +38,7 @@ function Lesson() {
   const [correct, setCorrect] = useState(0);
   const [result, setResult] = useState<{ gained: number; unlocked: Badge[]; xp: number } | null>(null);
 
-  const q = trail.questions[step];
+  const q = trail.questions[step]!;
   const answered = selected !== null;
   const isRight = answered && selected === q?.correctIndex;
 
