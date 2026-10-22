@@ -10,6 +10,11 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as ImpactoRouteImport } from './routes/impacto'
+import { Route as PontosDeColetaRouteImport } from './routes/pontos-de-coleta'
+import { Route as RecompensasRouteImport } from './routes/recompensas'
+import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as ResiduosIndexRouteImport } from './routes/residuos.index'
 import { Route as ResiduosIdRouteImport } from './routes/residuos.$id'
 import { Route as TrilhasIndexRouteImport } from './routes/trilhas.index'
@@ -18,6 +23,31 @@ import { Route as TrilhasIdRouteImport } from './routes/trilhas.$id'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImpactoRoute = ImpactoRouteImport.update({
+  id: '/impacto',
+  path: '/impacto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PontosDeColetaRoute = PontosDeColetaRouteImport.update({
+  id: '/pontos-de-coleta',
+  path: '/pontos-de-coleta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecompensasRoute = RecompensasRouteImport.update({
+  id: '/recompensas',
+  path: '/recompensas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ResiduosIndexRoute = ResiduosIndexRouteImport.update({
@@ -43,6 +73,11 @@ const TrilhasIdRoute = TrilhasIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/impacto': typeof ImpactoRoute
+  '/pontos-de-coleta': typeof PontosDeColetaRoute
+  '/recompensas': typeof RecompensasRoute
+  '/sobre': typeof SobreRoute
   '/residuos/$id': typeof ResiduosIdRoute
   '/trilhas/$id': typeof TrilhasIdRoute
   '/residuos/': typeof ResiduosIndexRoute
@@ -50,6 +85,11 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/impacto': typeof ImpactoRoute
+  '/pontos-de-coleta': typeof PontosDeColetaRoute
+  '/recompensas': typeof RecompensasRoute
+  '/sobre': typeof SobreRoute
   '/residuos/$id': typeof ResiduosIdRoute
   '/trilhas/$id': typeof TrilhasIdRoute
   '/residuos': typeof ResiduosIndexRoute
@@ -58,6 +98,11 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/impacto': typeof ImpactoRoute
+  '/pontos-de-coleta': typeof PontosDeColetaRoute
+  '/recompensas': typeof RecompensasRoute
+  '/sobre': typeof SobreRoute
   '/residuos/$id': typeof ResiduosIdRoute
   '/trilhas/$id': typeof TrilhasIdRoute
   '/residuos/': typeof ResiduosIndexRoute
@@ -65,12 +110,37 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/residuos/$id' | '/trilhas/$id' | '/residuos/' | '/trilhas/'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/impacto'
+    | '/pontos-de-coleta'
+    | '/recompensas'
+    | '/sobre'
+    | '/residuos/$id'
+    | '/trilhas/$id'
+    | '/residuos/'
+    | '/trilhas/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/residuos/$id' | '/trilhas/$id' | '/residuos' | '/trilhas'
+  to:
+    | '/'
+    | '/admin'
+    | '/impacto'
+    | '/pontos-de-coleta'
+    | '/recompensas'
+    | '/sobre'
+    | '/residuos/$id'
+    | '/trilhas/$id'
+    | '/residuos'
+    | '/trilhas'
   id:
     | '__root__'
     | '/'
+    | '/admin'
+    | '/impacto'
+    | '/pontos-de-coleta'
+    | '/recompensas'
+    | '/sobre'
     | '/residuos/$id'
     | '/trilhas/$id'
     | '/residuos/'
@@ -79,6 +149,11 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
+  ImpactoRoute: typeof ImpactoRoute
+  PontosDeColetaRoute: typeof PontosDeColetaRoute
+  RecompensasRoute: typeof RecompensasRoute
+  SobreRoute: typeof SobreRoute
   ResiduosIdRoute: typeof ResiduosIdRoute
   TrilhasIdRoute: typeof TrilhasIdRoute
   ResiduosIndexRoute: typeof ResiduosIndexRoute
@@ -92,6 +167,41 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/impacto': {
+      id: '/impacto'
+      path: '/impacto'
+      fullPath: '/impacto'
+      preLoaderRoute: typeof ImpactoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pontos-de-coleta': {
+      id: '/pontos-de-coleta'
+      path: '/pontos-de-coleta'
+      fullPath: '/pontos-de-coleta'
+      preLoaderRoute: typeof PontosDeColetaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recompensas': {
+      id: '/recompensas'
+      path: '/recompensas'
+      fullPath: '/recompensas'
+      preLoaderRoute: typeof RecompensasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/residuos/': {
@@ -127,6 +237,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
+  ImpactoRoute: ImpactoRoute,
+  PontosDeColetaRoute: PontosDeColetaRoute,
+  RecompensasRoute: RecompensasRoute,
+  SobreRoute: SobreRoute,
   ResiduosIdRoute: ResiduosIdRoute,
   TrilhasIdRoute: TrilhasIdRoute,
   ResiduosIndexRoute: ResiduosIndexRoute,
