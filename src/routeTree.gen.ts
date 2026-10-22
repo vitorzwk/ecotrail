@@ -10,33 +10,79 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ResiduosIndexRouteImport } from './routes/residuos.index'
+import { Route as ResiduosIdRouteImport } from './routes/residuos.$id'
+import { Route as TrilhasIndexRouteImport } from './routes/trilhas.index'
+import { Route as TrilhasIdRouteImport } from './routes/trilhas.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResiduosIndexRoute = ResiduosIndexRouteImport.update({
+  id: '/residuos/',
+  path: '/residuos/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResiduosIdRoute = ResiduosIdRouteImport.update({
+  id: '/residuos/$id',
+  path: '/residuos/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrilhasIndexRoute = TrilhasIndexRouteImport.update({
+  id: '/trilhas/',
+  path: '/trilhas/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrilhasIdRoute = TrilhasIdRouteImport.update({
+  id: '/trilhas/$id',
+  path: '/trilhas/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/residuos/$id': typeof ResiduosIdRoute
+  '/trilhas/$id': typeof TrilhasIdRoute
+  '/residuos/': typeof ResiduosIndexRoute
+  '/trilhas/': typeof TrilhasIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/residuos/$id': typeof ResiduosIdRoute
+  '/trilhas/$id': typeof TrilhasIdRoute
+  '/residuos': typeof ResiduosIndexRoute
+  '/trilhas': typeof TrilhasIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/residuos/$id': typeof ResiduosIdRoute
+  '/trilhas/$id': typeof TrilhasIdRoute
+  '/residuos/': typeof ResiduosIndexRoute
+  '/trilhas/': typeof TrilhasIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/residuos/$id' | '/trilhas/$id' | '/residuos/' | '/trilhas/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/residuos/$id' | '/trilhas/$id' | '/residuos' | '/trilhas'
+  id:
+    | '__root__'
+    | '/'
+    | '/residuos/$id'
+    | '/trilhas/$id'
+    | '/residuos/'
+    | '/trilhas/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ResiduosIdRoute: typeof ResiduosIdRoute
+  TrilhasIdRoute: typeof TrilhasIdRoute
+  ResiduosIndexRoute: typeof ResiduosIndexRoute
+  TrilhasIndexRoute: typeof TrilhasIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +94,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/residuos/': {
+      id: '/residuos/'
+      path: '/residuos'
+      fullPath: '/residuos/'
+      preLoaderRoute: typeof ResiduosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/residuos/$id': {
+      id: '/residuos/$id'
+      path: '/residuos/$id'
+      fullPath: '/residuos/$id'
+      preLoaderRoute: typeof ResiduosIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trilhas/': {
+      id: '/trilhas/'
+      path: '/trilhas'
+      fullPath: '/trilhas/'
+      preLoaderRoute: typeof TrilhasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trilhas/$id': {
+      id: '/trilhas/$id'
+      path: '/trilhas/$id'
+      fullPath: '/trilhas/$id'
+      preLoaderRoute: typeof TrilhasIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ResiduosIdRoute: ResiduosIdRoute,
+  TrilhasIdRoute: TrilhasIdRoute,
+  ResiduosIndexRoute: ResiduosIndexRoute,
+  TrilhasIndexRoute: TrilhasIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
