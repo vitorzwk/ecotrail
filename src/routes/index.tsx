@@ -35,7 +35,7 @@ function Dashboard() {
           </div>
           <div className="flex-1 space-y-3">
             <DemoNote>Usuário de demonstração</DemoNote>
-            <h1 className="text-3xl font-extrabold sm:text-4xl">Olá, Ana! 🌿</h1>
+            <h1 className="text-3xl font-extrabold sm:text-4xl">Olá, Jady! 🌿</h1>
             <p className="max-w-lg text-primary-soft">
               “Você está há {p.streak} dias cuidando do planeta. Que tal mais uma lição hoje?” — Broto
             </p>
