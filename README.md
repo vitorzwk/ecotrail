@@ -1,79 +1,92 @@
-# 🌱 EcoTrilha
+# EcoTrilha 🌿
 
-**Aprender sustentabilidade pode ser tão divertido quanto jogar!**
+Protótipo de aplicação web com foco em **educação ambiental** e **incentivo a hábitos sustentáveis**. O EcoTrilha guia o usuário por lições sobre descarte correto de resíduos, registra o impacto ambiental das ações e acompanha o progresso em uma jornada de aprendizado.
 
-O EcoTrilha é uma plataforma web de educação ambiental gamificada,
-desenvolvida como uma solução sustentável para um hackathon universitário.
+🔗 **Acesse:** [ecotrail-iota.vercel.app](https://ecotrail-iota.vercel.app/)
 
-Inspirado na experiência de aprendizado do Duolingo, o projeto
-transforma a educação ambiental em uma jornada interativa, na qual
-os usuários aprendem práticas sustentáveis, acumulam experiência,
-conquistam recompensas e acompanham seu impacto positivo no planeta.
-
-## 🎯 Objetivo do projeto
-
-Incentivar hábitos sustentáveis por meio da tecnologia e da
-gamificação, tornando a educação ambiental mais acessível,
-interativa e estimulante.
-
-A proposta é transformar pequenas atitudes do cotidiano em
-conquistas que contribuem para um futuro mais sustentável.
+---
 
 ## ✨ Funcionalidades
 
-- **🏠 Dashboard:** painel inicial com resumo do progresso do usuário.
-- **📚 Aprendizado:** lições educativas sobre sustentabilidade,
-  descarte correto e preservação ambiental.
-- **⭐ Sistema de XP:** pontuação por atividades e lições concluídas.
-- **🏆 Sistema de níveis:** evolução do usuário conforme seu desempenho.
-- **🔥 Sequência diária:** incentivo à constância no aprendizado.
-- **♻️ Gestão de resíduos:** conteúdos e orientações sobre descarte
-  adequado de materiais.
-- **📍 Pontos de coleta:** identificação de locais apropriados para
-  descarte e reciclagem.
-- **🎁 Recompensas:** incentivo à participação e à adoção de hábitos
-  sustentáveis.
-- **🌎 Indicador de impacto:** acompanhamento estimado da quantidade
-  de materiais encaminhados corretamente.
+- **Lições de educação ambiental** — conteúdo sobre descarte correto de materiais (papel, plástico, vidro, etc.).
+- **Registro de descartes** — o usuário registra o que descartou e acompanha o impacto estimado em kg.
+- **Sistema de XP e níveis** — gamificação para incentivar a continuidade dos hábitos sustentáveis.
+- **Sequência de dias (streak)** — acompanhamento da constância do usuário.
+- **Conquistas** — badges e recompensas por metas alcançadas.
+- **Usuário de demonstração** — permite explorar o app sem criar conta.
 
-## 💡 Diferencial
+---
 
-O EcoTrilha utiliza elementos de gamificação para aproximar o usuário
-da educação ambiental.
+## 🖥️ Demonstração
 
-Em vez de apresentar apenas informações teóricas, a plataforma
-propõe uma experiência de evolução contínua, com:
+O app conta com um **usuário de demonstração**, permitindo explorar as funcionalidades sem precisar criar conta.
 
-- Aprendizado em pequenas etapas.
-- Recompensas por participação.
-- Metas e desafios.
-- Acompanhamento de progresso.
-- Visualização do impacto ambiental.
+🔗 **Deploy:** [https://ecotrail-iota.vercel.app/](https://ecotrail-iota.vercel.app/)
 
-Dessa forma, o usuário deixa de ser apenas um espectador e passa a
-participar ativamente da construção de hábitos mais sustentáveis.
+---
 
-## 🌍 Impacto esperado
+## 🛠️ Stack
 
-O projeto busca contribuir para:
+- **React**
+- **TypeScript**
+- **Vite** (build e dev server)
+- **Vercel** (deploy)
 
-- Maior conscientização ambiental.
-- Incentivo à coleta seletiva.
-- Redução do descarte incorreto de resíduos.
-- Disseminação de práticas sustentáveis.
-- Formação de hábitos ambientalmente responsáveis.
+---
 
-## 🛠️ Tecnologias utilizadas
+## 🚀 Rodando localmente
 
-As tecnologias utilizadas no desenvolvimento do projeto incluem:
+```bash
+# Clone o repositório
+git clone https://github.com/vitorzwk/ecotrail.git
 
-- [Adicione aqui a linguagem de programação]
-- [Adicione aqui o framework utilizado]
-- [Adicione aqui as ferramentas complementares]
+# Entre na pasta
+cd ecotrail
 
-## 🚀 Como executar o projeto
+# Instale as dependências
+npm install
 
-1. Clone este repositório:
+# Rode em modo desenvolvimento
+npm run dev
+```
 
-   ```bash
-   git clone URL_DO_REPOSITORIO
+Acesse `http://localhost:5173` no navegador.
+
+---
+
+## 📦 Build para produção
+
+```bash
+npm run build
+npm run preview
+```
+
+---
+
+## 🌐 Deploy
+
+O projeto está hospedado na **Vercel**: [ecotrail-iota.vercel.app](https://ecotrail-iota.vercel.app/)
+
+---
+
+## 🎯 Sobre o projeto
+
+O EcoTrilha nasceu da ideia de que **educação ambiental pode ser leve, gamificada e acessível**. Em vez de apenas informar, o app convida o usuário a **praticar** — registrando descartes, acumulando XP e acompanhando o impacto real das suas ações no dia a dia.
+
+O protótipo foi desenvolvido como projeto de estudo em **React + TypeScript**, com foco em componentização, estado local e uma interface acolhedora que incentive a continuidade dos hábitos sustentáveis.
+
+---
+
+## 👤 Autor
+
+**Vitor Augusto Uchôa Paixão**
+
+- GitHub: [github.com/vitorzwk](https://github.com/vitorzwk)
+- LinkedIn: [linkedin.com/in/vitor-paixão](https://linkedin.com/in/vitor-paix%C3%A3o-28ba61341/)
+- E-mail: vitor.paixao.ti@gmail.com
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT.
